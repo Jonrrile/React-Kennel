@@ -1,5 +1,7 @@
 import React from "react";
 
+
+//This is a child element of Kennel but is where our representation for the cards resides
 const AnimalCard = () => {
   return (
     <div className="card">
