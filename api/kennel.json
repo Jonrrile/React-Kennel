@@ -4,11 +4,6 @@
       "id": 1,
       "name": "Doodles",
       "breed": "Poodle"
-    },
-    {
-      "id": 2,
-      "name": "Decker",
-      "breed": "German Shepherd"
     }
   ],
   "employees": [
@@ -26,11 +21,6 @@
       "id": 1,
       "name": "Charlotte Pike Poodles",
       "address": "123 Charlotte Pike"
-    },
-    {
-      "id": 2,
-      "name": "Gallatin German Shephards",
-      "address": "456 Charlotte Pike"
     }
   ],
   "owners": [
