@@ -14,6 +14,10 @@ const EmployeeList = () => {
       setEmployees(employeesFromAPI)
     });
   };
+  const deleteEmployee = id => {
+    EmployeeManager.delete(id)
+      .then(() => EmployeeManager.getAll().then(setEmployees));
+  };
 
   // got the animals from the API on the component's first render
   useEffect(() => {
@@ -23,7 +27,13 @@ const EmployeeList = () => {
   // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
     <div className="container-cards">
-      {employees.map(employee => <EmployeeCard key={employee.id} employee={employee} name={employee.name} />)}
+      {employees.map(employee => 
+      <EmployeeCard 
+      key={employee.id} 
+      employee={employee}
+      name={employee.name} 
+      deleteEmployee={deleteEmployee}
+      />)}
     </div>
   );
 };

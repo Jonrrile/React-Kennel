@@ -13,6 +13,7 @@ const OwnerCard = props => {
           Business Owner: <span className="card-owner">{props.owner.name}</span>
         </h3>
         <p>{props.owner.phone}</p>
+        <button type="button" onClick={() => props.deleteOwner(props.owner.id)}>Discharge</button>
       </div>
     </div>
   );

@@ -19,10 +19,6 @@
     {
       "id": 2,
       "name": "Jon Riley"
-    },
-    {
-      "id": 3,
-      "name": "Smitty Webermanjensen"
     }
   ],
   "locations": [
@@ -35,22 +31,12 @@
       "id": 2,
       "name": "Gallatin German Shephards",
       "address": "456 Charlotte Pike"
-    },
-    {
-      "id": 3,
-      "name": "Percy Priest Pitbulls",
-      "address": "789 Charlotte Pike"
     }
   ],
   "owners": [
     {
       "id": 1,
       "name": "Brenda's Angel",
-      "phone": "367-5309"
-    },
-    {
-      "id": 2,
-      "name": "Brenda's Angle",
       "phone": "367-5309"
     },
     {
