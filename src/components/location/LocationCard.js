@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 //This is a child element of Kennel but is where our representation for the cards resides
@@ -14,6 +15,9 @@ const LocationCard = props => {
         </h3>
         <p>Address: {props.location.address}</p>
         <button type="button" onClick={() => props.deleteLocation(props.location.id)}>Close Location</button>
+        <Link to={`/locations/${props.location.id}`}>
+  <button>Details</button>
+</Link>
       </div>
     </div>
   );

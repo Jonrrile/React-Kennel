@@ -1,6 +1,6 @@
 import React from "react";
 import "./Animal.css"
-
+import { Link } from "react-router-dom";
 
 //This is a child element of Kennel but is where our representation for the cards resides
 const AnimalCard = props => {
@@ -15,6 +15,9 @@ const AnimalCard = props => {
         </h3>
         <p>Breed: {props.animal.breed}</p>
         <button type="button" onClick={() => props.deleteAnimal(props.animal.id)}>Discharge</button>
+        <Link to={`/animals/${props.animal.id}`}>
+  <button>Details</button>
+</Link>
       </div>
     </div>
   );
