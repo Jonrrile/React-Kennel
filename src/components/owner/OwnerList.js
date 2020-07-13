@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import OwnerCard from './OwnerCard';
 import OwnerManager from '../../modules/OwnerManager';
 
-const OwnerList = () => {
+const OwnerList = (props) => {
   // The initial state is an empty array
   const [owners, setOwners] = useState([]);
 
@@ -27,6 +27,16 @@ const OwnerList = () => {
 
   // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
+    <div> 
+      <div>   
+      <section className="section-content">
+    <button type="button"
+        className="btn"
+        onClick={() => {props.history.push("/owners/new")}}>
+        Add Owner
+    </button>
+  </section>
+  </div>
     <div className="container-cards">
       {owners.map(owner => 
       <OwnerCard 
@@ -35,6 +45,8 @@ const OwnerList = () => {
       name={owner.name}
       deleteOwner={deleteOwner}/>)}
     </div>
+    </div>
+    
   );
 };
 export default OwnerList
