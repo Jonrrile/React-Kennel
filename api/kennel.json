@@ -9,6 +9,11 @@
       "name": "Nikki",
       "breed": "Blue Heeler",
       "id": 2
+    },
+    {
+      "name": "Potter",
+      "breed": "Pitbull",
+      "id": 3
     }
   ],
   "employees": [

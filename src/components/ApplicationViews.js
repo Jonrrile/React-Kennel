@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
 //only include these once they are built - previous practice exercise
@@ -12,20 +12,28 @@ import AnimalForm from "./animal/AnimalForm"
 import LocationForm from "./location/LocationForm"
 import EmployeeForm from "./employee/EmployeeForm"
 import OwnerForm from "./owner/OwnerForm"
+import Login from "./auth/Login"
+
+const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
 const ApplicationViews = () => {
   return (
     <React.Fragment>
+      <Route path="/login" component={Login} />
       <Route
         exact
-        path="/"
+        path="/home"
         render={props => {
-          return <Home />;
+          return <Home {...props}/>;
         }}
       />
       {/* Make sure you add the `exact` attribute here */}
 <Route exact path="/animals" render={(props) => {
+  if (isAuthenticated()) {
   return <AnimalList {...props}/>
+  } else {
+    return <Redirect to="/login" />
+  }
 }} />
 <Route 
 path="/animals/:animalId(\d+)" 
@@ -49,7 +57,11 @@ render={(props) => {
 */}
       {/* Make sure you add the `exact` attribute here */}
 <Route exact path="/locations" render={(props) => {
-  return <LocationList {...props} />
+  if (isAuthenticated()) {
+    return <LocationList {...props}/>
+    } else {
+      return <Redirect to="/login" />
+    }
 }} />
 <Route path="/locations/:locationId(\d+)" render={(props) => {
   // Pass the animalId to the AnimalDetailComponent
@@ -63,7 +75,11 @@ render={(props) => {
       <Route
        exact path="/owners"
         render={(props) => {
-          return <OwnerList {...props} />;
+          if (isAuthenticated()) {
+            return <OwnerList {...props}/>
+            } else {
+              return <Redirect to="/login" />
+            }
         }}
       />
       <Route path="/owners/new" render={(props) => {
@@ -73,7 +89,11 @@ render={(props) => {
       <Route
          exact path="/employees"
         render={(props) => {
-          return <EmployeeList {...props} />;
+          if (isAuthenticated()) {
+            return <EmployeeList {...props}/>
+            } else {
+              return <Redirect to="/login" />
+            }
         }}
       />
       <Route path="/employees/new" render={(props) => {
