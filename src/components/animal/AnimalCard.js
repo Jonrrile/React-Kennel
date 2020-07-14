@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 //This is a child element of Kennel but is where our representation for the cards resides
 const AnimalCard = props => {
-  return (
+  return ( 
     <div className="card">
       <div className="card-content">
         <picture>
@@ -17,7 +17,12 @@ const AnimalCard = props => {
         <button type="button" onClick={() => props.deleteAnimal(props.animal.id)}>Discharge</button>
         <Link to={`/animals/${props.animal.id}`}>
   <button>Details</button>
-</Link>
+  </Link>
+  <Link to={`/animals/${props.animal.id}/edit`}>
+  <button>
+    Edit
+  </button>
+  </Link>
       </div>
     </div>
   );

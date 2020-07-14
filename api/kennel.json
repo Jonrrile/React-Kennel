@@ -3,17 +3,20 @@
     {
       "id": 1,
       "name": "Doodles",
-      "breed": "Poodle"
+      "breed": "Poodle",
+      "employeeId": 1
     },
     {
       "name": "Nikki",
       "breed": "Blue Heeler",
-      "id": 2
+      "id": 2,
+      "employeeId": 2
     },
     {
       "name": "Potter",
       "breed": "Pitbull",
-      "id": 3
+      "id": 3,
+      "employeeId": 3
     }
   ],
   "employees": [
@@ -26,7 +29,7 @@
       "name": "Jon Riley"
     },
     {
-      "name": "James",
+      "name": "Me",
       "id": 3
     }
   ],
@@ -59,12 +62,13 @@
     },
     {
       "name": "Me",
-      "id": 4
+      "phone": "123456",
+      "id": 5
     },
     {
       "name": "Me",
-      "phone": "123456",
-      "id": 5
+      "phone": "7318192763",
+      "id": 6
     }
   ]
 }

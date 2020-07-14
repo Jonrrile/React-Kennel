@@ -42,7 +42,8 @@ const AnimalList = (props) => {
       key={animal.id} 
       animal={animal} 
       name={animal.name}
-      deleteAnimal={deleteAnimal} />)}
+      deleteAnimal={deleteAnimal} 
+      {...props}/>)}
     </div>
     </div>
   );
