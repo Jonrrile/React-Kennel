@@ -14,10 +14,10 @@ import EmployeeForm from "./employee/EmployeeForm"
 import OwnerForm from "./owner/OwnerForm"
 import Login from "./auth/Login"
 import AnimalEditForm from "./animal/AnimalEditForm"
-import LocationEditForm from "./location/LocationEditForm"
 import EmployeeEditForm from "./employee/EmployeeEditForm";
 import EmployeeWithAnimals from "./employee/EmployeeWithAnimals"
 import OwnerEditForm from "./owner/OwnerEditForm"
+import LocationEditForm from "./location/LocationEditForm"
 
 
 const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
@@ -74,7 +74,7 @@ render={(props) => {
   http://localhost:3000/animals/jack
 */}
       {/* Make sure you add the `exact` attribute here */}
-<Route exact path="/locations" render={(props) => {
+<Route exact path="/locations" render={props => {
   if (isAuthenticated()) {
     return <LocationList {...props}/>
     } else {
@@ -93,13 +93,13 @@ render={(props) => {
 <Route exact path="/locations/new" render={(props) => {
   return <LocationForm {...props} />
 }}/>
-<Route exact path="/locations/locationId(\d+)/edit" render={props => {
+<Route exact path="/locations/:locationId(\d+)/edit" render={props => {
   if (isAuthenticated()) {
     return <LocationEditForm {...props} />
   } else {
     return <Redirect to="/login" />
   }
-}}/>
+}} />
       <Route
        exact path="/owners"
         render={(props) => {

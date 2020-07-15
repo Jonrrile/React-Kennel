@@ -3,14 +3,15 @@ import LocationManager from "../../modules/LocationManager";
 import "./LocationDetail.css";
 
 const LocationDetail = props => {
-  const [location, setLocation] = useState({ name: "" });
+  const [location, setLocation] = useState({ name: "", address: ""});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     //get(id) from AnimalManager and hang on to the data; put it into state
     LocationManager.get(props.locationId).then(location => {
       setLocation({
-        name: location.name
+        name: location.name,
+        address: location.address
       });
       setIsLoading(false);
     });
@@ -33,7 +34,7 @@ const LocationDetail = props => {
           Name: <span style={{ color: "darkslategrey" }}>{location.name}</span>
         </h3>
         <button type="button" disabled={isLoading} onClick={handleDelete}>
-          Discharge
+          Close
         </button>
       </div>
     </div>

@@ -25,10 +25,12 @@ const LocationList = (props) => {
   useEffect(() => {
     getLocations();
   }, []);
-
+console.log({...props})
   // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
+    <>
     <div>
+     
     <section className="section-content">
       <button type="button"
       className="btn"
@@ -38,16 +40,16 @@ const LocationList = (props) => {
     </section>
     <div className="container-cards">
       {locations.map(location => 
-      <LocationCard key={location.id} 
+      <LocationCard 
+      key={location.id} 
       name={location.name} 
-      id={location.id}
-      address={location.address}
-      location={location}
+      place={location}
       deleteLocation={deleteLocation}
-      {...props}
+      {...props} 
       />)}
     </div>
     </div>
+    </>
   );
 };
 export default LocationList

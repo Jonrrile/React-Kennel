@@ -11,17 +11,17 @@ const LocationCard = props => {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSaqreF5-knRJB1My7B5GZsQVSHOV2lCzVzlQ&usqp=CAU" alt="My Place" />
         </picture>
         <h3>
-          Kennel: <span className="card-location">{props.location.name}</span>
+          Kennel: <span className="card-location">{props.place.name}</span>
         </h3>
-        <p>Address: {props.location.address}</p>
+        <p>Address: {props.place.address}</p>
         <button type="button" onClick={() => props.deleteLocation(props.location.id)}>Close Location</button>
-        <Link to={`/locations/${props.location.id}`}>
+        <Link to={`/locations/${props.place.id}`}>
   <button>Details</button>
   </Link>
-  <button type="button" onClick={() => props.history.push(`/locations/${props.location.id}/edit`)}>
-    Edit
-  </button>
-
+  <button type="button"
+  onClick={() => props.history.push(`/locations/${props.place.id}/edit`)}>
+  Edit
+</button>
       </div>
     </div>
   );
