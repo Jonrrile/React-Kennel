@@ -22,10 +22,14 @@ import LocationEditForm from "./location/LocationEditForm"
 
 const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
-const ApplicationViews = () => {
+const ApplicationViews = (props) => {
+  const hasUser = props.hasUser;
+  const setUser = props.setUser;
   return (
     <React.Fragment>
-      <Route path="/login" component={Login} />
+      <Route path="/login" render={props => {
+    return <Login setUser={setUser} {...props} />
+  }} />
       <Route
         exact
         path="/home"
@@ -35,7 +39,7 @@ const ApplicationViews = () => {
       />
       {/* Make sure you add the `exact` attribute here */}
 <Route exact path="/animals" render={(props) => {
-  if (isAuthenticated()) {
+  if (hasUser) {
   return <AnimalList {...props}/>
   } else {
     return <Redirect to="/login" />
