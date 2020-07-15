@@ -7,12 +7,6 @@
       "employeeId": 1
     },
     {
-      "name": "Nikki",
-      "breed": "Blue Heeler",
-      "id": 2,
-      "employeeId": 2
-    },
-    {
       "name": "Potter",
       "breed": "Pitbull",
       "id": 3,
@@ -23,10 +17,6 @@
     {
       "id": 1,
       "name": "Cesar Millan"
-    },
-    {
-      "id": 2,
-      "name": "Jon Riley"
     },
     {
       "name": "Me",
@@ -52,7 +42,7 @@
   "owners": [
     {
       "id": 1,
-      "name": "Brenda's Angel",
+      "name": "Brenda's ",
       "phone": "367-5309"
     },
     {

@@ -13,14 +13,13 @@ const EmployeeCard = props => {
           Store Employee: <span className="card-owner">{props.employee.name}</span>
         </h3>
         <button type="button" onClick={() => props.deleteEmployee(props.employee.id)}>Fire</button>
-        {/* <Link to={`/employee/${props.employee.id}/edit`}>
-  <button>
-    Edit
-  </button>
-  </Link> */}
   <button type="button"
         onClick={() => { props.history.push(`/employee/${props.employee.id}/details`) }}>
           Details</button>
+          <button type="button"
+  onClick={() => props.history.push(`/employees/${props.employee.id}/edit`)}>
+  Edit
+</button>
       </div>
     </div>
   );

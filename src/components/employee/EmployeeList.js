@@ -40,6 +40,7 @@ const EmployeeList = (props) => {
       employee={employee}
       name={employee.name} 
       deleteEmployee={deleteEmployee}
+      {...props}
       />)}
     </div>
   );

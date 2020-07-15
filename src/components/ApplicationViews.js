@@ -15,9 +15,9 @@ import OwnerForm from "./owner/OwnerForm"
 import Login from "./auth/Login"
 import AnimalEditForm from "./animal/AnimalEditForm"
 import LocationEditForm from "./location/LocationEditForm"
-// import EmployeeEditForm from "./employee/EmployeeEditForm";
+import EmployeeEditForm from "./employee/EmployeeEditForm";
 import EmployeeWithAnimals from "./employee/EmployeeWithAnimals"
-
+import OwnerEditForm from "./owner/OwnerEditForm"
 
 
 const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
@@ -90,10 +90,10 @@ render={(props) => {
     return <Redirect to="/login" />
   }
 }} />
-<Route path="/locations/new" render={(props) => {
+<Route exact path="/locations/new" render={(props) => {
   return <LocationForm {...props} />
 }}/>
-<Route path="/locations/locationId(\d+)/edit" render={props => {
+<Route exact path="/locations/locationId(\d+)/edit" render={props => {
   if (isAuthenticated()) {
     return <LocationEditForm {...props} />
   } else {
@@ -114,6 +114,13 @@ render={(props) => {
         return <OwnerForm {...props} />;
       }}
       />
+      <Route path="/owners/:ownerId(\d+)/edit" render={props => {
+  if (isAuthenticated()) {
+    return <OwnerEditForm {...props} />
+  } else {
+    return <Redirect to="/login" />
+  }
+}} />
       <Route
          exact path="/employees"
         render={(props) => {
@@ -130,13 +137,13 @@ render={(props) => {
       <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
         return <EmployeeWithAnimals {...props} />
       }} />
-      {/* <Route path="/employees/:employeeId(\d+)/edit" render={props => {
-        if (isAuthenticated()) {
-          return <EmployeeEditForm {...props} />
-        } else {
-          return <Redirect to="/login" /> */}
-        {/* }
-      }}/> */}
+   <Route path="/employees/:employeeId(\d+)/edit" render={props => {
+  if (isAuthenticated()) {
+    return <EmployeeEditForm {...props} />
+  } else {
+    return <Redirect to="/login" />
+  }
+}} />
       
     </React.Fragment>
   );
